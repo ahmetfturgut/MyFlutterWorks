@@ -31,7 +31,7 @@ class EtkinListe extends StatelessWidget {
   void ogrenciVerileriniGetir() {
     tumOgrenciler = List.generate(
         300,
-        (i) => Ogrenci("Süedamı seviyorum $i ", "Süedamı çok seviyorum $i ",
+        (i) => Ogrenci("test $i ", "test $i ",
             i % 2 == 0 ? true : false));
   }
 

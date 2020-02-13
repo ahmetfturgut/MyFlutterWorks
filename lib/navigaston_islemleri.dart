@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_yeni/form_islemleri.dart';
 import 'package:flutter_app_yeni/liste_safyasi.dart';
 
 import 'aSayfasi.dart';
@@ -15,7 +16,8 @@ class NavigasyonIslemleri extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
+        child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -53,11 +55,18 @@ class NavigasyonIslemleri extends StatelessWidget {
                 child: Text("Liste Sayfası"),
                 color: Colors.orange,
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (contex)=>listeSayfasi()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>listeSayfasi()));
+                }),
+                 RaisedButton(
+                child: Text("Form İşlemleri"),
+                color: Colors.orange,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>formIslemleri()));
                 }),
           ],
         ),
       ),
+      )
     );
   }
 }
