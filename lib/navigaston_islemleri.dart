@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_yeni/form_islemleri.dart';
+import 'package:flutter_app_yeni/input_islemleri.dart';
 import 'package:flutter_app_yeni/liste_safyasi.dart';
 
 import 'aSayfasi.dart';
 import 'bSayfasi.dart';
+import 'form_islemleri.dart';
 
 class NavigasyonIslemleri extends StatelessWidget {
   String baslik = "B sayfası";
@@ -58,10 +59,16 @@ class NavigasyonIslemleri extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>listeSayfasi()));
                 }),
                  RaisedButton(
-                child: Text("Form İşlemleri"),
+                child: Text("İnput İşlemleri"),
                 color: Colors.orange,
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>formIslemleri()));
+                }),
+                 RaisedButton(
+                child: Text("Form İşlemleri"),
+                color: Colors.orange,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>FormandTextFormField()));
                 }),
           ],
         ),
