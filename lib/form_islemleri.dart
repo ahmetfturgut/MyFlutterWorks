@@ -6,9 +6,13 @@ class FormandTextFormField extends StatefulWidget {
 }
 
 class _FormandTextFormFieldState extends State<FormandTextFormField> {
-  var _name, _email, _pass, _cins,cinsiyet;
+  var _name, _email, _pass, _cins, cinsiyet;
+  bool switchState = false;
   var otoControl = false;
+  double sliderDeger = 0;
   var termAndConditions = false;
+  List<String> sehirler = ["Ankara", "İstanbul", "Sakarya", "Kocaeli"];
+  String secilenSehir = "Ankara";
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -96,6 +100,43 @@ class _FormandTextFormFieldState extends State<FormandTextFormField> {
                         });
                       }),
                   SizedBox(height: 10),
+                  SwitchListTile(
+                      value: switchState,
+                      title: Text("Switch"),
+                      subtitle: Text("Switch subtitle"),
+                      secondary: Icon(Icons.refresh),
+                      onChanged: (deger) {
+                        setState(() {
+                          debugPrint("$deger");
+                          switchState = deger;
+                        });
+                      }),
+                  Slider(
+                    value: sliderDeger,
+                    onChanged: (deger) {
+                      setState(() {
+                        sliderDeger = deger;
+                      });
+                    },
+                    min: 0,
+                    max: 20,
+                    divisions: 30,
+                    label: sliderDeger.toString(),
+                  ),
+                  DropdownButton<String>(
+                    items: sehirler.map((sehir) {
+                      return DropdownMenuItem(
+                        child: Text(sehir),
+                        value: sehir,
+                      );
+                    }).toList(),
+                    onChanged: (s) {
+                      setState(() {
+                        secilenSehir = s;
+                      });
+                    },
+                    value: secilenSehir,
+                  ),
                   RaisedButton.icon(
                     icon: Icon(Icons.save),
                     label: Text("KAYDET"),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_yeni/input_islemleri.dart';
 import 'package:flutter_app_yeni/liste_safyasi.dart';
+import 'package:flutter_app_yeni/stepper.dart';
 
 import 'aSayfasi.dart';
 import 'bSayfasi.dart';
@@ -69,6 +70,12 @@ class NavigasyonIslemleri extends StatelessWidget {
                 color: Colors.orange,
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>FormandTextFormField()));
+                }),
+                 RaisedButton(
+                child: Text("Stepper İşlemleri"),
+                color: Colors.orange,
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>stapperPage()));
                 }),
           ],
         ),
